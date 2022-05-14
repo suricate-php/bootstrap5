@@ -13,7 +13,6 @@ use Suricate\FormItem;
  */
 class Select
 {
-
     /**
      * Bootstrap select
      *
