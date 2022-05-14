@@ -16,10 +16,10 @@ class Checkbox
     /**
      * Bootstrap checkbox
      *
-     * @param string  $name     input name
-     * @param mixed   $value    input value
-     * @param boolean $checked  is it checked ?
-     * @param array   $itemData formitem params
+     * @param string  $name           input name
+     * @param mixed   $value          input value
+     * @param boolean $checked        is it checked ?
+     * @param array   $htmlAttributes formitem htmlAttributes
      *
      * @return string
      */
@@ -27,19 +27,19 @@ class Checkbox
         string $name,
         mixed $value,
         bool $checked,
-        array $itemData = []
+        array $htmlAttributes = []
     ): string {
-        $label = isset($itemData['label']) ? $itemData['label'] : '';
-        unset($itemData['label']);
+        $label = isset($htmlAttributes['label']) ? $htmlAttributes['label'] : '';
+        unset($htmlAttributes['label']);
 
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'form-check-input ' . $itemData['class'];
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'form-check-input ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'form-check-input';
+            $htmlAttributes['class'] = 'form-check-input';
         }
 
         $output = '<label class="form-check-label">';
-        $output .= FormItem::checkbox($name, $value, $checked, '', $itemData);
+        $output .= FormItem::checkbox($name, $value, $checked, '', $htmlAttributes);
         $output .= ' ' . $label;
         $output .= '</label>';
 

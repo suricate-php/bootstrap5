@@ -16,21 +16,21 @@ class File
     /**
      * Bootstrap input file
      *
-     * @param string $name     input name
-     * @param array  $itemData form item params
+     * @param string $name           input name
+     * @param array  $htmlAttributes form item htmlAttributes
      *
      * @return string
      */
-    public static function render(string $name, $itemData = []): string
+    public static function render(string $name, array $htmlAttributes = []): string
     {
-        $label = isset($itemData['label']) ? $itemData['label'] : '';
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'form-control ' . $itemData['class'];
+        $label = isset($htmlAttributes['label']) ? $htmlAttributes['label'] : '';
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'form-control ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'form-control';
+            $htmlAttributes['class'] = 'form-control';
         }
         $output = '<div class="form-group mb-3">';
-        $output .= FormItem::file($name, $label, $itemData);
+        $output .= FormItem::file($name, $label, $htmlAttributes);
         $output .= '</div>';
 
         return $output;

@@ -16,23 +16,23 @@ class Text
     /**
      * Bootstrap input text
      *
-     * @param string $name     input name
-     * @param string $value    input value
-     * @param array  $itemData form item params
+     * @param string $name           input name
+     * @param string $value          input value
+     * @param array  $htmlAttributes form item params
      * 
      * @return string
      */
-    public static function render(string $name, $value, $itemData = []): string
+    public static function render(string $name, $value, array $htmlAttributes = []): string
     {
-        $label = isset($itemData['label']) ? $itemData['label'] : '';
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'form-control ' . $itemData['class'];
+        $label = isset($htmlAttributes['label']) ? $htmlAttributes['label'] : '';
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'form-control ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'form-control';
+            $htmlAttributes['class'] = 'form-control';
         }
 
         $output = '<div class="mb-3">';
-        $output .= FormItem::text($name, $value, $label, $itemData);
+        $output .= FormItem::text($name, $value, $label, $htmlAttributes);
         $output .= '</div>';
 
         return $output;

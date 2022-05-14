@@ -17,24 +17,27 @@ class Textarea
     /**
      * Bootstrap textarea
      *
-     * @param string $name     textarea name
-     * @param string $value    textarea value
-     * @param array  $itemData formitem params
+     * @param string $name           textarea name
+     * @param string $value          textarea value
+     * @param array  $htmlAttributes formitem htmlAttributes
      *
      * @return string
      */
-    public static function render(string $name, string $value, array $itemData = []): string
-    {
-        $label = $itemData['label'] ?: '';
+    public static function render(
+        string $name,
+        string $value,
+        array $htmlAttributes = []
+    ): string {
+        $label = $htmlAttributes['label'] ?: '';
 
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'form-control ' . $itemData['class'];
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'form-control ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'form-control';
+            $htmlAttributes['class'] = 'form-control';
         }
 
         $output = '<div class="form-group mb-3">';
-        $output .= FormItem::textarea($name, $value, $label, $itemData);
+        $output .= FormItem::textarea($name, $value, $label, $htmlAttributes);
         $output .= '</div>';
 
         return $output;

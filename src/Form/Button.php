@@ -16,29 +16,29 @@ class Button
     /**
      * Bootstrap form button
      *
-     * @param string $name     input name
-     * @param string $value    input value
-     * @param array  $itemData formitem params
-     * @param string $type     type (button or submit)
+     * @param string $name           input name
+     * @param string $value          input value
+     * @param array  $htmlAttributes FormItem html attributes
+     * @param string $type           type (button or submit)
      * 
      * @return void
      */
     public static function render(
         string $name,
         string $value,
-        $itemData = [],
-        $type = 'button'
+        array $htmlAttributes = [],
+        string $type = 'button'
     ): string {
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'btn ' . $itemData['class'];
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'btn ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'btn';
+            $htmlAttributes['class'] = 'btn';
         }
 
-        if ($type == 'submit') {
-            return FormItem::button($name, $value, null, $itemData);
+        if ($type === 'submit') {
+            return FormItem::submit($name, $value, null, $htmlAttributes);
         }
 
-        return FormItem::submit($name, $value, null, $itemData);
+        return FormItem::button($name, $value, null, $htmlAttributes);
     }
 }

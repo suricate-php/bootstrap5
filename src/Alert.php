@@ -20,8 +20,11 @@ class Alert
      * 
      * @return string
      */
-    public static function alert(string $content, $level = 'success', $icon = null): string
-    {
+    public static function alert(
+        string $content,
+        $level = 'success',
+        $icon = null
+    ): string {
         $output = '<div class="alert alert-' . $level . '" role="alert">';
         if ($icon !== null) {
             $output .= Icon($icon);

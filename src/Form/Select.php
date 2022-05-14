@@ -19,7 +19,7 @@ class Select
      * @param string $name            input name
      * @param array  $availableValues select available values
      * @param mixed  $value           current value
-     * @param array  $itemData        formitem params
+     * @param array  $htmlAttributes  formitem params
      *
      * @return string
      */
@@ -27,13 +27,13 @@ class Select
         string $name,
         array $availableValues,
         mixed $value,
-        array $itemData = []
+        array $htmlAttributes = []
     ): string {
-        $label = isset($itemData['label']) ? $itemData['label'] : '';
-        if (isset($itemData['class'])) {
-            $itemData['class'] = 'form-select ' . $itemData['class'];
+        $label = isset($htmlAttributes['label']) ? $htmlAttributes['label'] : '';
+        if (isset($htmlAttributes['class'])) {
+            $htmlAttributes['class'] = 'form-select ' . $htmlAttributes['class'];
         } else {
-            $itemData['class'] = 'form-select';
+            $htmlAttributes['class'] = 'form-select';
         }
 
         $output = '<div class="form-group mb-3">';
@@ -42,7 +42,7 @@ class Select
             $availableValues,
             $value,
             $label,
-            $itemData
+            $htmlAttributes
         );
         $output .= '</div>';
 
