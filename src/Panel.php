@@ -11,7 +11,6 @@ namespace Suricate\Bootstrap5;
  */
 class Panel
 {
-
     /**
      * Render a panel
      *
