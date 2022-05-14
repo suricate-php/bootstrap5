@@ -20,7 +20,7 @@ class Submit
      * 
      * @return void
      */
-    public static function submit(
+    public static function render(
         string $name,
         string $value,
         array $htmlAttributes = []

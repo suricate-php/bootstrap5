@@ -20,7 +20,7 @@ class Alert
      * 
      * @return string
      */
-    public static function alert(
+    public static function render(
         string $content,
         $level = 'success',
         $icon = null
