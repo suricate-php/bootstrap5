@@ -19,7 +19,7 @@ class Text
      * @param string $name           input name
      * @param string $value          input value
      * @param array  $htmlAttributes form item params
-     * 
+     *
      * @return string
      */
     public static function render(string $name, $value, array $htmlAttributes = []): string
