@@ -38,7 +38,7 @@ class ToggleSwitch
             $htmlAttributes['class'] = 'form-check-input';
         }
 
-        $output  = '<div class="form-check form-switch">';
+        $output  = '<div class="form-check form-switch mb-3">';
         $output .= '    <label class="form-check-label">';
         $output .=      FormItem::checkbox($name, $value, $checked, '', $htmlAttributes);
         $output .=      $label;
