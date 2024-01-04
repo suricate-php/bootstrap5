@@ -11,7 +11,7 @@ use Suricate\FormItem;
  *
  * @author Mathieu LESNIAK <mathieu@lesniak.fr>
  */
-class DateTime
+class Date
 {
     /**
      * Bootstrap input date
